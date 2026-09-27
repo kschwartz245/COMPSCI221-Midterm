@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace COMPSCI221_Midterm
 {
-    internal class Program
+    class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
+
         }
     }
 }
