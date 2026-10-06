@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace COMPSCI221_Midterm
 {
-    internal class Program
+    public class Item
     {
-        static void Main(string[] args)
-        {
-        }
+        //Items need static name & price with proper encapsulation
+
+
     }
+
+    //Inherit class during stretch goal for modifiers on items
 }

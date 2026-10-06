@@ -1,10 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\kschw\\Documents\\GitHub\\COMPSCI221-Midterm\\",
+  "WorkspaceRootPath": "C:\\Users\\kschw\\Documents\\Github\\COMPSCI221-Midterm\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{081A22AC-091F-4D1D-89CB-2025719A18A5}|COMPSCI221-Midterm.csproj|c:\\users\\kschw\\documents\\github\\compsci221-midterm\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{081A22AC-091F-4D1D-89CB-2025719A18A5}|COMPSCI221-Midterm.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{081A22AC-091F-4D1D-89CB-2025719A18A5}|COMPSCI221-Midterm.csproj|c:\\users\\kschw\\documents\\github\\compsci221-midterm\\shop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{081A22AC-091F-4D1D-89CB-2025719A18A5}|COMPSCI221-Midterm.csproj|solutionrelative:shop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{081A22AC-091F-4D1D-89CB-2025719A18A5}|COMPSCI221-Midterm.csproj|c:\\users\\kschw\\documents\\github\\compsci221-midterm\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{081A22AC-091F-4D1D-89CB-2025719A18A5}|COMPSCI221-Midterm.csproj|solutionrelative:item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,17 +18,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Item.cs",
+              "DocumentMoniker": "C:\\Users\\kschw\\Documents\\Github\\COMPSCI221-Midterm\\Item.cs",
+              "RelativeDocumentMoniker": "Item.cs",
+              "ToolTip": "C:\\Users\\kschw\\Documents\\Github\\COMPSCI221-Midterm\\Item.cs",
+              "RelativeToolTip": "Item.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-06T22:43:18.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\kschw\\Documents\\GitHub\\COMPSCI221-Midterm\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\kschw\\Documents\\GitHub\\COMPSCI221-Midterm\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Shop.cs",
+              "DocumentMoniker": "C:\\Users\\kschw\\Documents\\Github\\COMPSCI221-Midterm\\Shop.cs",
+              "RelativeDocumentMoniker": "Shop.cs",
+              "ToolTip": "C:\\Users\\kschw\\Documents\\Github\\COMPSCI221-Midterm\\Shop.cs",
+              "RelativeToolTip": "Shop.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAEIAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-27T19:22:56.544Z",
               "EditorCaption": ""
