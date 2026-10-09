@@ -9,6 +9,11 @@ namespace COMPSCI221_Midterm
 {
     internal class Shop
     {
+        static void PrintMenu()
+        {
+            Console.WriteLine("Select an Option:\n1. Exit Program\n2. Add Item\n3. Remove Item\n4. Save Data\n5. Load Data");
+        }
+
         static int GetLineCount(string path)
         {
             if (!File.Exists(path))
@@ -73,10 +78,44 @@ namespace COMPSCI221_Midterm
             //need a Console.WriteLine listing for options for user
             //switch or if statements for options
             //
-            
 
 
+            bool exit = false;
+            int choice;
+            string input;
+            PrintMenu();
+            while (!exit)
+            {
+                input = Console.ReadLine();
+                bool isValid = int.TryParse(input, out choice);
+                if (!isValid)
+                {
+                    Console.WriteLine("Input not valid! Numbers Only");
+                }
+                else
+                {
+                    Console.Clear();
+                    PrintMenu();
+                    switch (choice)
+                    {
+                        default:
+                            Console.WriteLine("\nSelect an option from the list");
+                            break;
+                        case (1):// Exit Program
+                            exit = true;
+                            break;
+                        case (2):// Add Item
+                            break;
+                        case (3):// Remove Item
+                            break;
+                        case(4):// Save Data
+                            break;
+                        case(5):// Load Data
+                            break;
+                    }
+                }
 
+            }
         }
     }
 }

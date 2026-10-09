@@ -1,0 +1,7 @@
+C:\Users\kschw\Documents\Github\COMPSCI221-Midterm\bin\Debug\COMPSCI221-Midterm.exe.config
+C:\Users\kschw\Documents\Github\COMPSCI221-Midterm\bin\Debug\COMPSCI221-Midterm.exe
+C:\Users\kschw\Documents\Github\COMPSCI221-Midterm\bin\Debug\COMPSCI221-Midterm.pdb
+C:\Users\kschw\Documents\Github\COMPSCI221-Midterm\obj\Debug\COMPSCI221-Midterm.csproj.AssemblyReference.cache
+C:\Users\kschw\Documents\Github\COMPSCI221-Midterm\obj\Debug\COMPSCI221-Midterm.csproj.CoreCompileInputs.cache
+C:\Users\kschw\Documents\Github\COMPSCI221-Midterm\obj\Debug\COMPSCI221-Midterm.exe
+C:\Users\kschw\Documents\Github\COMPSCI221-Midterm\obj\Debug\COMPSCI221-Midterm.pdb
