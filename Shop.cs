@@ -7,25 +7,25 @@ using System.Threading.Tasks;
 
 namespace COMPSCI221_Midterm
 {
-    internal class Shop
+    public class Shop
     {
         static void PrintMenu(int gold)
         {
             Console.WriteLine($"Adventure Shop Sim:\nCurrent Gold: {gold}\n");
-            Console.WriteLine("Select an Option:\n1. Exit Program\n2. Add Item\n3. Remove Item\n4. Save Data\n5. Load Data");
+            Console.WriteLine("Select an Option:\n1. Exit Program\n2. Add Item\n3. Remove Item\n4. Print Items \n5. Save Data \n6. Load Data");
         }
 
         static void PrintItems(Item[] arr)
         {
-            for(int i = 0; i<arr.Length; i++)
+            for(int i = 1; i<arr.Length+1; i++)
             {
-                if (arr[i] == null)
+                if (arr[i-1] == null)
                 {
-                    Console.WriteLine($"{i}.No Item!");
+                    Console.WriteLine($"{i}. No Item!");
                 }
                 else
                 {
-                    Console.WriteLine($"{i}. {arr[i].ToString()}");
+                    Console.WriteLine($"{i}. {arr[i-1].ToString()}");
                 }
             }
             Console.WriteLine("\n");
@@ -52,6 +52,10 @@ namespace COMPSCI221_Midterm
 
         static string ReadHeaderFromFile(string path)
         {
+            if (!File.Exists(path))
+            {
+                throw new FileNotFoundException("Error finding file");
+            }
             using StreamReader reader = new StreamReader(path);
             string line = reader.ReadLine();
             return line;
@@ -135,18 +139,30 @@ namespace COMPSCI221_Midterm
 
         static void RemoveItemV1(Item[] inv)
         {
-            Console.WriteLine("Select and Item to Remove: \n");
-            PrintItems(inv);
-            string input = Console.ReadLine();
-            int choice;
-            bool isValid = int.TryParse(input, out choice);
-            if (!isValid || choice > inv.Length)
+            string input;
+            int choice = -1;
+            while (choice != 0)
             {
-                Console.WriteLine("Input not valid! Numbers Only and Only Within the Choices Provided");
-            }
-            else
-            {
-                inv[choice] = null;
+                Console.WriteLine("\nSelect and Item to Remove, Select 0 to Exit: \n");
+                PrintItems(inv);
+                input = Console.ReadLine();
+                bool isValid = int.TryParse(input, out choice);
+                if (!isValid || choice > inv.Length || choice < 0)
+                {
+                    Console.WriteLine("Input not valid! Numbers from List Only");
+                }
+                else
+                {
+                    if (inv[choice-1] != null)
+                    {
+                        inv[choice-1] = null;
+                    }
+                    else
+                    {
+                        Console.WriteLine("No Item Selected!");
+                    }
+
+                }
             }
         }
 
@@ -154,7 +170,8 @@ namespace COMPSCI221_Midterm
         {
             int gold = 200;
             //string for path of items
-            //string for path of savedata
+            //string for path of basic store savedata
+            //string for path of item savedata
 
             //need list of items imported to refer to i.e. ReadItemsFromFile()
             Item[] roster = new Item[0]; // fake array of items to compile code !!! Replace with Imported Item File Array !!!
@@ -189,10 +206,13 @@ namespace COMPSCI221_Midterm
                         case (3):// Remove Item
                             RemoveItemV1(inv);
                             break;
-                        case(4):// Save Data
+                        case(4):// Print Items
+                            PrintItems(inv);
+                            break;
+                        case(5):// Save Data
 
                             break;
-                        case(5):// Load Data
+                        case (6):// Load Data
 
                             break;
                     }
