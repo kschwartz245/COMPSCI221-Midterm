@@ -74,8 +74,10 @@ namespace COMPSCI221_Midterm
                 string[] col = line.Split(',');
 
                 //Parse data here for item file
+                string name = col[0];
+                int price = int.Parse(col[1]);
 
-                items[i] = new Item();
+                items[i] = new Item(name, price);
             }
             return items;
         }
