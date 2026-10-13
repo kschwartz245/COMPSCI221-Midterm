@@ -9,9 +9,26 @@ namespace COMPSCI221_Midterm
 {
     internal class Shop
     {
-        static void PrintMenu()
+        static void PrintMenu(int gold)
         {
+            Console.WriteLine($"Adventure Shop Sim:\nCurrent Gold: {gold}\n");
             Console.WriteLine("Select an Option:\n1. Exit Program\n2. Add Item\n3. Remove Item\n4. Save Data\n5. Load Data");
+        }
+
+        static void PrintItems(Item[] arr)
+        {
+            for(int i = 0; i<arr.Length; i++)
+            {
+                if (arr[i] == null)
+                {
+                    Console.WriteLine($"{i}.No Item!");
+                }
+                else
+                {
+                    Console.WriteLine($"{i}. {arr[i].ToString()}");
+                }
+            }
+            Console.WriteLine("\n");
         }
 
         static int GetLineCount(string path)
@@ -66,24 +83,88 @@ namespace COMPSCI221_Midterm
         //need readfile and writefile for savedata
         //Gold amount and array of shop parsed in and out of csv file
 
+        static int ItemCount(Item[] inv) // Counts Items currently in inventory and returns an Int
+        {
+            int count = 0;
+            for (int i = 0; i < inv.Length; i++)
+            {
+                if (inv[i] != null)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+        
+        static int RoomInStore(Item[] inv) // Searches array passed in for first empty space, returning position if found or -1 if full
+        {
+            for (int i = 0; i< inv.Length; i++)
+            {
+                if (inv[i] == null)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        static void AddItemV1(Item[] roster, Item[] inv) // Calls RoomInStore and places empty item in an empty slot
+        {
+            int pos = RoomInStore(inv);
+            if (pos != -1)
+            {
+                Console.WriteLine("Select an Item to Add: \n");
+                PrintItems(roster);
+                string input = Console.ReadLine();
+                int choice;
+                bool isValid = int.TryParse(input, out choice);
+                if (!isValid || choice > roster.Length) 
+                {
+                    Console.WriteLine("Input not valid! Numbers Only and Only Within the Choices Provided");
+                }
+                else
+                {
+                    inv[pos] = roster[choice]; 
+                }
+            }
+            else
+            {
+                Console.WriteLine("Store is Full!\n");
+            }
+        }
+
+        static void RemoveItemV1(Item[] inv)
+        {
+            Console.WriteLine("Select and Item to Remove: \n");
+            PrintItems(inv);
+            string input = Console.ReadLine();
+            int choice;
+            bool isValid = int.TryParse(input, out choice);
+            if (!isValid || choice > inv.Length)
+            {
+                Console.WriteLine("Input not valid! Numbers Only and Only Within the Choices Provided");
+            }
+            else
+            {
+                inv[choice] = null;
+            }
+        }
+
         static void Main()
         {
-            //need initial gold
+            int gold = 200;
             //string for path of items
             //string for path of savedata
 
             //need list of items imported to refer to i.e. ReadItemsFromFile()
-
-            //Loop needed that runs until specific input from console entered
-            //need a Console.WriteLine listing for options for user
-            //switch or if statements for options
-            //
+            Item[] roster = new Item[0]; // fake array of items to compile code !!! Replace with Imported Item File Array !!!
+            Item[] inv = new Item[20];// Array of Item Objects limited to store capacity
 
 
             bool exit = false;
             int choice;
             string input;
-            PrintMenu();
+            PrintMenu(gold);
             while (!exit)
             {
                 input = Console.ReadLine();
@@ -94,8 +175,6 @@ namespace COMPSCI221_Midterm
                 }
                 else
                 {
-                    Console.Clear();
-                    PrintMenu();
                     switch (choice)
                     {
                         default:
@@ -105,16 +184,21 @@ namespace COMPSCI221_Midterm
                             exit = true;
                             break;
                         case (2):// Add Item
+                            AddItemV1(roster, inv);
                             break;
                         case (3):// Remove Item
+                            RemoveItemV1(inv);
                             break;
                         case(4):// Save Data
+
                             break;
                         case(5):// Load Data
+
                             break;
                     }
                 }
-
+                Console.Clear();
+                PrintMenu(gold);
             }
         }
     }
